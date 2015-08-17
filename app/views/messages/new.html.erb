@@ -1,0 +1,9 @@
+<%= form_for(@message) do |f| %>
+  
+    <%= f.email_field :to %><br>
+    <%= f.text_field :title  %><br>
+    <%= f.text_area :body  %><br>
+    <%= f.email_field :from  %><br>
+    <%= f.submit "Send"  %>
+<% end %>
+  
