@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
       if @message.valid?
         @message.save
         redirect_to root_path
+        flash[:notice] = "Success"
       else
         flash[:notice] = "You wrong"
       end
