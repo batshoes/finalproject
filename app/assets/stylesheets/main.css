@@ -1,0 +1,108 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+::selection      { background:#a6e0ff; color:#333; }
+
+body {
+  background:  #ffffff;
+  font-family: "warnock-pro-1","warnock-pro-2", serif;
+  font-size: 62.5%;
+  line-height: 3.2em;
+  color: #333;
+  display:none;
+}
+
+#outer {
+    width: 100%;
+    position: relative;
+}
+
+#content {
+    width: 840px;
+    position: absolute;
+    margin: 0 12px 200px 24px;
+}
+
+#about {
+    margin-left: 888px;
+    text-align: center;
+
+}
+
+@media all and (max-width: 945px) {
+  #content {
+    width: auto;
+    position: absolute;
+    top:100px;
+  }
+  #about {
+    width: 100%;
+    position:absolute;
+    top:0;
+    margin: 0;
+  }
+}
+
+p {
+  text-indent: 48px;
+  margin: 0;
+  font-size: 2em;
+  }
+a[data-opens] {
+  text-decoration: underline;
+}
+a, a:visited {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  background-image: -moz-linear-gradient(top,#fff 50%,#999 50%);
+  background-image: -webkit-linear-gradient(top,#fff 50%,#999 50%);
+  background-image: linear-gradient(to bottom,#fff 50%,#999 50%);
+  background-repeat: repeat-x;
+  background-size: 100% 2px;
+  background-position: 0 26px;
+  }
+a.clicked {
+  background-image: linear-gradient(to bottom,#fff 50%,#fff 50%);
+  cursor: default;
+  text-decoration: none;    }
+a.outer, a.outer:visited {
+  color: #333;
+  background-image: -moz-linear-gradient(top,#fff 50%,#00ddff 50%);
+  background-image: -webkit-linear-gradient(top,#fff 50%,#00ddff 50%);
+  background-image: linear-gradient(to bottom,#fff 50%,#00ddff 50%);
+  }
+span {
+    display: none;
+  }
+.off{
+  display: none;
+  }
+.on {
+  display: inline;
+  }
+p.on {
+  display: block;
+}
+.address {
+  text-indent: 0;
+  margin: 0 96px;
+  }
+.chapterstart, .minutesstart, .afterminutes {
+  margin-top: 28px;
+  }
+.minutesstart, .divider {
+  text-indent: 0;
+  }
+.divider {
+  text-align: center;
+  margin: 28px 0;
+  }
+.divider a {
+  margin: 28px;
+  }
+  
+
