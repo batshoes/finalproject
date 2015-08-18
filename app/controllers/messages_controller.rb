@@ -1,13 +1,13 @@
 #require 'SecureRandom'
 class MessagesController < ApplicationController
-  before_action :authenticate, only: [:show]
 
   def index
     
   end
 
   def show
-     # @message = Message.where Message.auth_token params[:id]
+     @messages = Message.where access_token: params[:id]
+     binding.pry
   end
 
   def new
