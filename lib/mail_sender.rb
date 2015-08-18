@@ -1,16 +1,18 @@
 class MailSender
+
+  attr_accessor :message
+
   def mail(params)
     puts params.inspect
     @email_to = params['receiver_email']
     @email_from = params['sender_email']
     @name = params['to']
     @your_name = params['from']
-    @title = params['title']
-    @body = params['body']
+    @access_token = params['access_token']
 
 
-
-    @confirmation = "<p>Hi!, #{@name} You've gotten a Fleet from #{@your_name}"
+    @confirmation = "<p>Hi!, #{@name} You've gotten a Fleet from #{@your_name}.</p>"
+    @confirmation = "#{@confirmation}" + "Click here! http://localhost:3000/messages/#{@access_token}"
     
     mandrill = Mandrill::API.new ENV['MANDRILL_APIKEY']
      message = {to: [{"type"  =>"to",

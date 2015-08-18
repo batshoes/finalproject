@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818145058) do
+ActiveRecord::Schema.define(version: 20150818203956) do
 
   create_table "messages", force: :cascade do |t|
     t.string   "to"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150818145058) do
     t.datetime "updated_at",     null: false
     t.string   "sender_email"
     t.string   "receiver_email"
+    t.string   "access_token"
   end
 
 end

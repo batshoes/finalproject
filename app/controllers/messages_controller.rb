@@ -1,6 +1,13 @@
+#require 'SecureRandom'
 class MessagesController < ApplicationController
+  before_action :authenticate, only: [:show]
+
   def index
     
+  end
+
+  def show
+     # @message = Message.where Message.auth_token params[:id]
   end
 
   def new
@@ -13,16 +20,18 @@ class MessagesController < ApplicationController
         @message.save
         redirect_to root_path
         flash[:notice] = "Success"
-        MailSender.new.mail(message_params)
+        MailSender.new.mail(@message)
       else
         flash[:notice] = "You wrong"
       end
   end
 
-  private 
+
+private
+
 
   def message_params
-    params.require(:message).permit(:to, :from, :title, :body, :sender_email, :receiver_email)
+    params.require(:message).permit(:to, :from, :title, :body, :sender_email, :receiver_email, :auth_token)
   end
 
 end

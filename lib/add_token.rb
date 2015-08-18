@@ -1,0 +1,3 @@
+class AddToken
+
+end
