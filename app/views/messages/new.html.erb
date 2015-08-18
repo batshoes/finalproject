@@ -1,9 +1,23 @@
 <%= form_for(@message) do |f| %>
-  
-    <%= f.email_field :to %><br>
-    <%= f.text_field :title  %><br>
-    <%= f.text_area :body  %><br>
-    <%= f.email_field :from  %><br>
+
+    <%= f.label "Their Email"  %>
+    <%= f.email_field :receiver_email %><br>
+
+    <%= f.label "Their Name"  %>
+    <%= f.text_field :to %><br>
+
+    <%= f.label "Heading"  %>
+    <%= f.text_field :title %><br>
+
+    <%= f.label "Fleet"  %>
+    <%= f.text_area :body %><br>
+
+    <%= f.label "Your Name"  %>
+    <%= f.text_field :from %><br>
+
+    <%= f.label "Your Email"  %>
+    <%= f.email_field :sender_email %><br>
+
     <%= f.submit "Send"  %>
     
 <% end %>
