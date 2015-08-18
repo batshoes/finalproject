@@ -13,6 +13,7 @@ class MessagesController < ApplicationController
         @message.save
         redirect_to root_path
         flash[:notice] = "Success"
+        MailSender.new.mail(message_params)
       else
         flash[:notice] = "You wrong"
       end
@@ -21,7 +22,7 @@ class MessagesController < ApplicationController
   private 
 
   def message_params
-    params.require(:message).permit(:to, :from, :title, :body, :sender_email)
+    params.require(:message).permit(:to, :from, :title, :body, :sender_email, :receiver_email)
   end
 
 end
