@@ -7,7 +7,6 @@ class MessagesController < ApplicationController
 
   def show
      @messages = Message.where access_token: params[:id]
-     binding.pry
   end
 
   def new

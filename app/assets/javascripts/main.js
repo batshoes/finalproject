@@ -13,8 +13,16 @@ $(document).ready(function() {
   pagetitle();
   
   $('body').css('display', 'block');
+
+  // condense();
+
   
 });
+
+function condense() {
+  myArr = string.split(/[.|,]/);
+  return myArr
+}
 
 function opening() {
   $('a[data-opens]').click(function() {
@@ -52,7 +60,7 @@ function subjectline() {
 
 function pagetitle() {
 
-  var pagetitles = ["My Name Is James", "Howdy Y'all", "It's Snapchat, but for the written letter"]
+  var pagetitles = ["My Name Is James", "Howdy Y'all", "It's Snapchat, but for the Mail"]
   
   var pickpagetitle = Math.floor(Math.random()*pagetitles.length);
   
