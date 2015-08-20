@@ -1,4 +1,4 @@
-<%= form_for(@message) do |f| %>
+<div><%= form_for(@message) do |f| %>
 
     <%= f.label "Their Email"  %>
     <%= f.email_field :receiver_email %><br>
@@ -21,4 +21,9 @@
     <%= f.submit "Send"  %>
     
 <% end %>
-  
+</div>
+<div style="display; inline">Type out your message, line by line, seperated into the staggered elements you wish to send, and underline the word you wish to open the next part of the message.</div><div>
+example</div>
+<p><u>Hi</u></p>
+<p>This is the text opened by "Hi" <u>and</u>.</p>
+<p>this will be opened by "and".</p>

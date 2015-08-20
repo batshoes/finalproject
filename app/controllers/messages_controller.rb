@@ -17,6 +17,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)    
       if @message.valid?
         @message.save
+        binding.pry
         redirect_to root_path
         flash[:notice] = "Success"
         MailSender.new.mail(@message)

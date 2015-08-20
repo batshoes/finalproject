@@ -1,6 +1,6 @@
 class MailSender
 
-  attr_accessor :message
+  attr_reader :message
 
   def mail(params)
     puts params.inspect
