@@ -60,3 +60,27 @@ function pagetitle() {
   $(document).attr('title', pagetitles[pickpagetitle]);
   
 }
+
+$('#parsedOutput').on('click', function() {
+  return $('span.hide').first().removeClass('hide');
+});
+
+$('#input').on('keyup', function() {
+  var i, j, n, numPipes, pipes, ref, val;
+  val = $(this).val();
+  $('#output').html(val);
+  pipes = val.match(/\|/g);
+  numPipes = (pipes != null ? pipes.length : void 0) || 0;
+  $("#pipeCount").text(numPipes);
+  if (!((pipes != null) && numPipes % 2 === 0)) {
+    return;
+  }
+  n = (numPipes / 2) - 1;
+  for (i = j = 0, ref = n; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
+    val = val.replace(/\|/, "<span class='hide'>");
+  }
+  val = val.replace(/\|/g, "</span>");
+  return $('#parsedOutput').html(val);
+});
+
+
