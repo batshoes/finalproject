@@ -13,29 +13,8 @@ $(document).ready(function() {
   pagetitle();
   
   $('body').css('display', 'block');
-
-  // string = $('.content').to_s
-  // condense();
-
   
 });
-
-// function condense() {
-//   words = []
-//   count = 000
-//   myArr = string.split(/[.|,]/);
-//   console.log(myArr);
-//   for (var i = 0; i < myArr.length; i++) {
-//     words[i] = myArr[i].split(' ');
-//   };
-
-//   for (var x = 0; x < words.length - 1; x++) {
-//     i = words[x].length - 1
-//     words[x][i] = '<a data-opens="' + count + '">' + words[x][i] + " </a>"
-//     count++
-//   };
-//   return words
-// }
 
 function opening() {
   $('a[data-opens]').click(function() {
@@ -67,7 +46,7 @@ function readitall() {
 
 //   var pickemailsubject = Math.floor(Math.random()*emailsubjects.length);
 
-//   $('a[href="mailto:alantrotter@gmail.com"]').attr("href", "mailto:alantrotter@gmail.com?subject=" + emailsubjects[pickemailsubject]);
+//   $('a[href="mailto:j.o.middlemiss@gmail.com"]').attr("href", "mailto:j.o.middlemiss@gmail.com?subject=" + emailsubjects[pickemailsubject]);
 
 // }
 

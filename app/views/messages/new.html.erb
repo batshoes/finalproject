@@ -1,29 +1,30 @@
 <div><%= form_for(@message) do |f| %>
 
-    <%= f.label "Their Email"  %>
-    <%= f.email_field :receiver_email %><br>
 
-    <%= f.label "Their Name"  %>
-    <%= f.text_field :to %><br>
+    <%=f.email_field :receiver_email, :placeholder=>"Receivers Email"%><br>
 
-    <%= f.label "Heading"  %>
-    <%= f.text_field :title %><br>
+    <%=f.text_field :to, :placeholder=>"Receivers Name"%><br>
 
-    <%= f.label "Fleet"  %>
-    <%= f.text_area :body %><br>
+    <%=f.text_field :title, :placeholder=>"Title your message"%><br>
 
-    <%= f.label "Your Name"  %>
-    <%= f.text_field :from %><br>
+    <%=f.text_area :body, :placeholder=>"Write your Message here", :id => "input"%><br>
 
-    <%= f.label "Your Email"  %>
-    <%= f.email_field :sender_email %><br>
+    <%=f.text_field :from, :placeholder=>"Your Name"%><br>
+
+    <%=f.email_field :sender_email, :placeholder=>"Return Email"%><br>
 
     <%= f.submit "Send"  %>
     
 <% end %>
 </div>
-<div style="display; inline">Type out your message, line by line, seperated into the staggered elements you wish to send, and underline the word you wish to open the next part of the message.</div><div>
+
+<div id="parsed-output"></div>
+<div id="pipes"></div>
+<div id="output"></div>
+<div id="pipecount"></div>
+
+<div style="display; inline">Type out your message, line by line, seperated into the staggered elements you wish to send. I.e. line 1 opens line two, line two opens line three. Surround the word(s) you want to be underlined(clickable) with the pipe character | and this will open the next line of the message.</div><div>
 example</div>
-<p><u>Hi</u></p>
-<p>This is the text opened by "Hi" <u>and</u>.</p>
+<p>|Hi|</p>
+<p>This is the text opened by "Hi" |and|.</p>
 <p>this will be opened by "and".</p>
