@@ -16,8 +16,9 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)    
       if @message.valid?
+        body = Condenser.new.contract(@message.body)
+        @message.body = body
         @message.save
-        binding.pry
         redirect_to root_path
         flash[:notice] = "Success"
         MailSender.new.mail(@message)
