@@ -5,7 +5,9 @@ $(document).ready(function() {
   pagetitle();
   
   $('body').css('display', 'block');
-  
+
+  setupButton();
+
 });
 
 function opening() {
@@ -23,9 +25,35 @@ function opening() {
 }
 
 
+function setupButton() {
+  $('.button').on('click', function(){
+    swal({  title: "Are you sure?",   
+            text: "Do you want to double check your message?",  
+            type: "info",  
+            showCancelButton: true,  
+            confirmButtonColor: "#6B55",  
+            confirmButtonText: "Yes, Send It!",  
+            cancelButtonText: "I'll double check!",  
+            closeOnConfirm: false,  
+            closeOnCancel: false 
+        },
+            function(isConfirm){  
+              if (isConfirm) {    
+                swal("Sent!", "Your friend should get the message soon!", "success");
+                //debugger;
+                $('.new_message').submit();
+
+              } else {    
+                swal("Cancelled", "Read the description on the right if you're stuck :)", "error");  
+              } 
+            });
+  });  
+}
+
+
 function pagetitle() {
 
-  var pagetitles = ["My Name Is James", "Howdy Y'all", "It's Snapchat, but for the Mail"]
+  var pagetitles = ["James Middlemiss", "Hey Guys!", "It's Snapchat, for writers", "Invisible Ink"]
   
   var pickpagetitle = Math.floor(Math.random()*pagetitles.length);
   
@@ -33,8 +61,4 @@ function pagetitle() {
   $(document).attr('title', pagetitles[pickpagetitle]);
   
 }
-
-$('#parsedOutput').on('click', function() {
-  return $('span.hide').first().removeClass('hide');
-});
 

@@ -1,5 +1,5 @@
 <div class='left'>
-  <%= form_for(@message) do |f| %>
+  <%= form_for(@message, :class => "message_form") do |f| %>
     <%=f.email_field :receiver_email, :placeholder=>"Receivers Email", :class => "input"%><br>
 
     <%=f.text_field :to, :placeholder=>"Receivers Name", :class => "input"%><br>
@@ -12,7 +12,7 @@
 
     <%=f.email_field :sender_email, :placeholder=>"Return Email", :class => "input"%><br>
 
-    <%= f.submit "Send", :class => "button"  %>
+    <%= f.button "Send", :class => "button", :type => "button"  %>
   <% end %>
 </div>
 <div class='right'>

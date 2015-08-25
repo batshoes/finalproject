@@ -1,4 +1,7 @@
 class Condenser
+  def censor
+    
+  end
 
   def contract(string)
     open = 0
