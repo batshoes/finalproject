@@ -2,11 +2,13 @@ $(document).ready(function() {
   
   opening();
 
-  pagetitle();
+  pageTitle();
   
   $('body').css('display', 'block');
 
   setupButton();
+
+  readItAll();
 
 });
 
@@ -24,6 +26,17 @@ function opening() {
   });
 }
 
+function readItAll() {
+  $('a[data-finish]').click(function() {
+
+    var finished = $(this).attr('data-finish');
+    $('[data-finished="' + finished + '"]').removeClass('off').addClass('on');
+
+    $(this).addClass('clicked')
+
+    $('[data-opens]').css("text-decoration", "none")
+  })
+}
 
 function setupButton() {
   $('.button').on('click', function(){
@@ -51,7 +64,7 @@ function setupButton() {
 }
 
 
-function pagetitle() {
+function pageTitle() {
 
   var pagetitles = ["James Middlemiss", "Hey Guys!", "It's Snapchat, for writers", "Invisible Ink"]
   

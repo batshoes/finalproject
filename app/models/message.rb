@@ -1,6 +1,5 @@
 class Message < ActiveRecord::Base
   before_save :generate_access_token
-  
 private
   
   def generate_access_token
