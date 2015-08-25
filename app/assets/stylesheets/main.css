@@ -65,18 +65,21 @@ span {
 p.on {
   display: block;
 }
-.input, .button {
+.input, .button, .input-2 {
   height: 50px;
   margin: 15px 40px;
-  width : 300px;
-  text-align: center;
+  width: 300px;
+  /*max-width : 300px;*/
+  font-family: 'Quicksand', sans-serif;
 }
 .input-2 {
-  margin: 15px 40px;
   height: 250px;
-  width: 300px;
-  max-width: 300px;
+  font-size: 20px;
+}
+.input, .button{
+  text-align: center;
   font-size: 15px;
+
 }
 
   
