@@ -1,19 +1,15 @@
 $(document).ready(function() {
   
-  var desiredtopmargin = $(window).height() * 0.08;
-
-  $("#content").css("padding-top", desiredtopmargin);
-  
-  readitall();
-  
   opening();
-  
-  subjectline();
-  
-  pagetitle();
+
+  pageTitle();
   
   $('body').css('display', 'block');
-  
+
+  setupButton();
+
+  readItAll();
+
 });
 
 function opening() {
@@ -30,29 +26,47 @@ function opening() {
   });
 }
 
-function readitall() {
-  
-  $('a[data-finished]').click(function() {
-    setTimeout(function() {
-      $('head').append('<link rel="stylesheet" href="finished.css" type="text/css" />');
-    }, 5000);
-  });
-  
+function readItAll() {
+  $('a[data-finish]').click(function() {
+
+    var finished = $(this).attr('data-finish');
+    $('[data-finished="' + finished + '"]').removeClass('off').addClass('on');
+
+    $(this).addClass('clicked')
+
+    $('[data-opens]').css("text-decoration", "none")
+  })
 }
 
-function subjectline() {
+function setupButton() {
+  $('.button').on('click', function(){
+    swal({  title: "Are you sure?",   
+            text: "Do you want to double check your message?",  
+            type: "info",  
+            showCancelButton: true,  
+            confirmButtonColor: "#6B55",  
+            confirmButtonText: "Yes, Send It!",  
+            cancelButtonText: "I'll double check!",  
+            closeOnConfirm: false,  
+            closeOnCancel: false 
+        },
+            function(isConfirm){  
+              if (isConfirm) {    
+                swal("Sent!", "Your friend should get the message soon!", "success");
+                //debugger;
+                $('.new_message').submit();
 
-  var emailsubjects = ["I wanted to tell you about a dream I had", "Flattery", "One day we will meet and then, then you will be sorry", "christ this website... something is wrong with you", "Have you ever thought about what happens after you die?", "This is something I have never told anyone, but I know you won’t judge me"];
-
-  var pickemailsubject = Math.floor(Math.random()*emailsubjects.length);
-
-  $('a[href="mailto:alantrotter@gmail.com"]').attr("href", "mailto:alantrotter@gmail.com?subject=" + emailsubjects[pickemailsubject]);
-
+              } else {    
+                swal("Cancelled", "Read the description on the right if you're stuck :)", "error");  
+              } 
+            });
+  });  
 }
 
-function pagetitle() {
 
-  var pagetitles = ["My Name Is James", "Howdy Y'all", "It's Snapchat, but for the written letter"]
+function pageTitle() {
+
+  var pagetitles = ["James Middlemiss", "Hey Guys!", "It's Snapchat, for writers", "Invisible Ink"]
   
   var pickpagetitle = Math.floor(Math.random()*pagetitles.length);
   
@@ -60,3 +74,4 @@ function pagetitle() {
   $(document).attr('title', pagetitles[pickpagetitle]);
   
 }
+

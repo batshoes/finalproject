@@ -1,24 +1,59 @@
-<%= form_for(@message) do |f| %>
+<div class='left'>
+  <%= form_for(@message, :class => "message_form") do |f| %>
+    <%  %>
+    <%=f.email_field :receiver_email,:value => params[:receiver_email], :placeholder => "Receiver's Email", :class => "input"%> <br>
 
-    <%= f.label "Their Email"  %>
-    <%= f.email_field :receiver_email %><br>
+    <%=f.text_field :to, :value => params[:to], :placeholder=>"Receiver's Name", :class => "input"%><br>
 
-    <%= f.label "Their Name"  %>
-    <%= f.text_field :to %><br>
+    <%=f.text_field :title, :placeholder=>"Title your message", :class => "input"%><br>
 
-    <%= f.label "Heading"  %>
-    <%= f.text_field :title %><br>
+    <%=f.text_area :body, :placeholder=>"Write your Message here", :class => "input-2"%><br>
 
-    <%= f.label "Fleet"  %>
-    <%= f.text_area :body %><br>
+    <%=f.text_field :from, :value => params[:from], :placeholder=>"Your Name", :class => "input"%><br>
 
-    <%= f.label "Your Name"  %>
-    <%= f.text_field :from %><br>
+    <%=f.email_field :sender_email, :value => params[:sender_email], :placeholder=>"Return Email", :class => "input"%><br>
 
-    <%= f.label "Your Email"  %>
-    <%= f.email_field :sender_email %><br>
+    <%= f.button "Send", :class => "button", :type => "button"  %>
+  <% end %>
+</div>
+<div class='right'>
+  <p>I'm a pro! I just need a quick <a data-finish="true">reminder</a></p>
+  <br><br>
+  <p>Never done this <a data-opens='001' >before?</a>
+    <span data-openedby='001' data-finished="true"> That's cool. Check this <a data-opens='002'>out.</a></span>
+    <p><span data-openedby='002' data-finished="true"> With Invisible <a data-opens='003'>Ink,</a></span>
+    <span data-openedby='003' data-finished="true"> you can send a message to anyone you <a data-opens='004'>know.</a></span>
+    <span data-openedby='004' data-finished="true"> Your message will <a data-opens='005'>open </a></span>
+    <span data-openedby='005' data-finished="true"><a data-opens='006'>at </a></span>
+    <span data-openedby='006' data-finished="true"><a data-opens='007'>your</a></span>
+    <span data-openedby='007' data-finished="true"> own <a data-opens='008'>pace. </a></span>
+    <span data-openedby='008' data-finished="true"> Once they close the <a data-opens='009'>window,</a></span>
+    <span data-openedby='009' data-finished="true"> the message disappears <a data-opens='010'>forever!</a></span></p><br>
+    <p><span data-openedby='010' data-finished="true"> To <a data-opens='011'>begin,</a></span>
+    <span data-openedby='011' data-finished="true"> type (or copy and paste) <a data-opens='012'> your message</a></span>
+    <span data-openedby='012' data-finished="true"> in the box to <a data-opens='013'>the left.</a></span>
+    <span data-openedby='013' data-finished="true"> Each new line you <a data-opens='014'>enter</a></span>
+    <span data-openedby='014' data-finished="true"> will be the next part of the <a data-opens='015'>message</a></span>
+    <span data-openedby='015' data-finished="true"> to appear, once the recipient <a data-opens='016'>clicks</a></span>
+    <span data-openedby='016' data-finished="true"> on the <a data-opens='017'>underlined word(s).</a></span>
+    <span data-openedby='017' data-finished="true"> You decide which <a data-opens='018'>word(s)</a></span>
+    <span data-openedby='018' data-finished="true"> get underlined by enclosing <a data-opens='019'>them</a></span>
+    <span data-openedby='019' data-finished="true"> in the pipe <a data-opens='020'>(|) character,</a></span>
+    <span data-openedby='020' data-finished="true"> <a data-opens='021'>|like this|.</a></span></p>
+    <br><br>
 
-    <%= f.submit "Send"  %>
-    
-<% end %>
-  
+  <span data-openedby='021' data-finished="true"><img src="http://livetyping.com/1568186.gif"><br><br> <a data-opens='200'>Hi</a>
+  <span data-openedby='200' data-finished="true">This is the text opened by "Hi." <a data-opens='201'>and </a></span>
+  <span data-openedby='201' data-finished="true">This is the text opened by "and".</span>    
+  <br><br>
+  <a data-opens='022'>Remember...</a>
+  </span>
+  <br><br>
+ 
+  <span data-openedby='022' data-finished="true">Only put one "set" of pipes in a<a data-opens='023'> sentence.</a></span>
+  <span data-openedby='023' data-finished="true"> Putting more can cause <a data-opens='024'>problems.</a></span>
+  <span data-openedby='024' data-finished="true"><img src="http://livetyping.com/1568169.gif"><img src="http://livetyping.com/1568178.gif"><br><a data-opens='025'>Also...</a></span>
+  <span data-openedby='025' data-finished="true">It is ok to surround a <a data-opens='026'>word or two</a> in the middle of a sentence.</span>
+  <span data-openedby='026' data-finished="true"><img src="http://livetyping.com/1568181.gif"></span>
+</div>
+

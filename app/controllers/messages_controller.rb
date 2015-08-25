@@ -1,13 +1,12 @@
 #require 'SecureRandom'
 class MessagesController < ApplicationController
-  before_action :authenticate, only: [:show]
 
   def index
-    
+    @messages = Message.all
   end
 
   def show
-     # @message = Message.where Message.auth_token params[:id]
+     @messages = Message.where access_token: params[:id]
   end
 
   def new
@@ -17,13 +16,23 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)    
       if @message.valid?
+        body = Condenser.new.contract(@message.body)
+        @message.body = body
+        @message.sender_email = "middlemissj.usa@gmail.com"
         @message.save
-        redirect_to root_path
+        redirect_to messages_path
         flash[:notice] = "Success"
         MailSender.new.mail(@message)
       else
         flash[:notice] = "You wrong"
       end
+  end
+
+  def destroy
+    @message = Message.find params[:id]
+    @message.destroy!
+    flash[:alert] = "Message is gone forever!"
+    redirect_to messages_path
   end
 
 
