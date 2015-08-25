@@ -8,30 +8,29 @@ html, body {
 
 body {
   background:  #ffffff;
-  font-family: "warnock-pro-1","warnock-pro-2", serif;
-  font-size: 16px;
-  line-height: 3.2em;
-  color: #333;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  color: #226;
   display:none;
 }
-
-#outer {
-    width: 100%;
-    position: relative;
+.left {
+  width: 45%;
+  display: inline-block;
+  float: left;
 }
-
-.content {
-    width: 840px;
-    position: absolute;
-    margin: 0 12px 200px 24px;
+.right {
+  width: 45%;
+  display: inline-block;
+  float: left;
+  padding: 40px;
+}
+.info {
+  width: 40%;
+  display: inline-block;
 }
 
 @media all and (max-width: 945px) {
-  #content {
-    width: auto;
-    position: absolute;
-    top:100px;
-  }
+
   #about {
     width: 100%;
     position:absolute;
@@ -52,13 +51,8 @@ a, a:visited {
   }
 a.clicked {
   cursor: default;
-  text-decoration: none;    }
-a.outer, a.outer:visited {
-  color: #333;
-  background-image: -moz-linear-gradient(top,#fff 50%,#00ddff 50%);
-  background-image: -webkit-linear-gradient(top,#fff 50%,#00ddff 50%);
-  background-image: linear-gradient(to bottom,#fff 50%,#00ddff 50%);
-  }
+  text-decoration: none;    
+}
 span {
     display: none;
   }
@@ -70,6 +64,19 @@ span {
   }
 p.on {
   display: block;
+}
+.input, .button {
+  height: 50px;
+  margin: 15px 40px;
+  width : 300px;
+  text-align: center;
+}
+.input-2 {
+  margin: 15px 40px;
+  height: 250px;
+  width: 300px;
+  max-width: 300px;
+  font-size: 15px;
 }
 
   
