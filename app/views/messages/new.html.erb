@@ -1,22 +1,5 @@
+
 <div class='left'>
-  <%= form_for(@message, :class => "message_form") do |f| %>
-    <%  %>
-    <%=f.email_field :receiver_email,:value => params[:receiver_email], :placeholder => "Receiver's Email", :class => "input"%> <br>
-
-    <%=f.text_field :to, :value => params[:to], :placeholder=>"Receiver's Name", :class => "input"%><br>
-
-    <%=f.text_field :title, :placeholder=>"Title your message", :class => "input"%><br>
-
-    <%=f.text_area :body, :placeholder=>"Write your Message here", :class => "input-2"%><br>
-
-    <%=f.text_field :from, :value => params[:from], :placeholder=>"Your Name", :class => "input"%><br>
-
-    <%=f.email_field :sender_email, :value => params[:sender_email], :placeholder=>"Return Email", :class => "input"%><br>
-
-    <%= f.button "Send", :class => "button", :type => "button"  %>
-  <% end %>
-</div>
-<div class='right'>
   <p>I'm a pro! I just need a quick <a data-finish="true">reminder</a></p>
   <br><br>
   <p>Never done this <a data-opens='001' >before?</a>
@@ -56,4 +39,23 @@
   <span data-openedby='025' data-finished="true">It is ok to surround a <a data-opens='026'>word or two</a> in the middle of a sentence.</span>
   <span data-openedby='026' data-finished="true"><img src="http://livetyping.com/1568181.gif"></span>
 </div>
+<div>
+  <div class='right'>
+    <%= form_for(@message, :class => "message_form") do |f| %>
+      <%  %>
+      <%=f.email_field :receiver_email,:value => params[:receiver_email], :name => "rec_email", :placeholder => "Receiver's Email", :class => "input", :required => true %> <br>
 
+      <%=f.text_field :to, :value => params[:to], :placeholder=>"Receiver's Name", :class => "input" %><br>
+
+      <%=f.text_field :title, :placeholder=>"Title your message", :class => "input" %><br>
+
+      <%=f.text_area :body, :placeholder=>"Write your Message here", :class => "input-2"%><br>
+
+      <%=f.text_field :from, :value => params[:from], :placeholder=>"Your Name", :class => "input"%><br>
+
+      <%=f.email_field :sender_email, :value => params[:sender_email], :placeholder=>"Return Email", :class => "input"%><br>
+
+      <%= f.button "Send", :class => "button", :type => "button"  %>
+    <% end %>
+  </div>
+</div>

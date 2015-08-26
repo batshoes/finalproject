@@ -1,5 +1,6 @@
 $(document).ready(function() {
   
+
   opening();
 
   pageTitle();
@@ -9,6 +10,8 @@ $(document).ready(function() {
   setupButton();
 
   readItAll();
+
+  // validateForm()
 
 });
 
@@ -38,10 +41,22 @@ function readItAll() {
   })
 }
 
+// function validateForm() {
+//    $(".message_form").validate({
+// debug: true,
+// rules: {
+// "message[receiver_email]": {required: true, email: true},
+// "message[to]": {required: true},
+// "message[sender_email]": {required: true, email: true}
+// }
+// });
+// }
+
 function setupButton() {
   $('.button').on('click', function(){
+    // validateForm(); 
     swal({  title: "Are you sure?",   
-            text: "Do you want to double check your message?",  
+            text: "Do you want to double check your message or credentials?",  
             type: "info",  
             showCancelButton: true,  
             confirmButtonColor: "#6B55",  
@@ -57,7 +72,7 @@ function setupButton() {
                 $('.new_message').submit();
 
               } else {    
-                swal("Cancelled", "Read the description on the right if you're stuck :)", "error");  
+                swal("Cancelled", "Read the description on the left if you're stuck :)", "error");  
               } 
             });
   });  

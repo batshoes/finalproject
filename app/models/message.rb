@@ -1,4 +1,5 @@
 class Message < ActiveRecord::Base
+  # validates_presence_of :to, :from, :sender_email, :receiver_email, :title, :body
   before_save :generate_access_token
 private
   
