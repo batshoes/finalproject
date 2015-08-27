@@ -34,7 +34,6 @@ class Condenser
         array[i] = array[i] + "</span>"
         open += 1
       end
-      binding.pry
     end
     array.join(' ')
   end

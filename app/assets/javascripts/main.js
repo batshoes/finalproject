@@ -13,6 +13,8 @@ $(document).ready(function() {
 
   // validateForm()
 
+  randomPage();
+
 });
 
 function opening() {
@@ -21,7 +23,7 @@ function opening() {
     var openedby = $(this).attr('data-opens');
     $('[data-openedby="' + openedby +'"]').removeClass('off').addClass('on');
     
-    var closedby = $(this).attr('data-closes');
+    var closedby = $(this).attr('data-opens');
     $('[data-closedby="' + closedby +'"]').css('display', 'none');
     
     $(this).addClass('clicked');
@@ -85,8 +87,19 @@ function pageTitle() {
   
   var pickpagetitle = Math.floor(Math.random()*pagetitles.length);
   
-
   $(document).attr('title', pagetitles[pickpagetitle]);
   
+}
+  
+function randomPage() {
+  $('.random').click(function(){
+
+  var access_tokens = ['a769699ea127a2dfec22bb55c7f45c17', '5adbc1322aa9386aed632b7e1ec4b8f0', '21f8d975ad83baced44c9c9b1b59823a']
+
+  var random_access_token = Math.floor(Math.random()*access_tokens.length);
+
+  location.assign("http://localhost:3000/messages/"+ access_tokens[random_access_token]);
+
+  });
 }
 
