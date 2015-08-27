@@ -1,10 +1,14 @@
 
 <div class='left'>
  
-  <p>Never done this <a data-opens='001' >before?</a>
-  <br><br>
-  <a data-closedby='001'><p>I'm a pro! I just need a quick <a data-finish="true" data-closedby='001'>reminder</a></p></a>
-    <span data-openedby='001' data-finished="true"> That's cool. Check this <a data-opens='002'>out.</a></span>
+  <a data-closedby='500'>
+    <p>Never done this <a data-opens='001' data-closedby='500' >before?</a>
+    <br><br>
+  </a>
+
+  <a data-closedby='001'><p>I'm a pro! I just need a quick <a data-finish="true" data-closedby='001' data-opens='500'>reminder</a></p></a>
+    <br>
+    <span data-openedby='001' data-finished="true" data-closedby='500'> That's cool. Check this <a data-opens='002'>out.</a></span>
     <p><span data-openedby='002' data-finished="true"> With Invisible <a data-opens='003'>Ink,</a></span>
     <span data-openedby='003' data-finished="true"> you can send a message to anyone you <a data-opens='004'>know.</a></span>
     <span data-openedby='004' data-finished="true"> Your message will <a data-opens='005'>open </a></span>
@@ -47,9 +51,9 @@
 </div>
 <div>
   <div class='right'>
-    <%= form_for(@message, :class => "message_form") do |f| %>
+    <%= form_for @message do |f| %>
       <%  %>
-      <%=f.email_field :receiver_email,:value => params[:receiver_email], :name => "rec_email", :placeholder => "Receiver's Email", :class => "input", :required => true %> <br>
+      <%=f.email_field :receiver_email,:value => params[:receiver_email], :placeholder => "Receiver's Email", :class => "input"%> <br>
 
       <%=f.text_field :to, :value => params[:to], :placeholder=>"Receiver's Name", :class => "input" %><br>
 
@@ -61,7 +65,7 @@
 
       <%=f.email_field :sender_email, :value => params[:sender_email], :placeholder=>"Return Email", :class => "input"%><br>
 
-      <%= f.button "Send", :class => "button", :type => "button"  %>
+      <%= f.button "Send", :class => "button", :type => 'button'  %>
     <% end %>
   </div>
 </div>

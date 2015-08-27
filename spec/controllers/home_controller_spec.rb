@@ -10,11 +10,7 @@ RSpec.describe HomeController, type: :controller do
                             receiver_email: 'test_email_2@gmail.com',
                             access_token: 'Random'
                             )}
-
-  describe 'GET #index' do
-    it "opens the correct correlating span"
-      
-    end
-  end
+    
+  
 
 end

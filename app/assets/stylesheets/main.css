@@ -18,7 +18,10 @@ body {
   padding-left: 75px;
   padding-top: 30px;
   padding-right: 75px;
-
+}
+.dead {
+  text-decoration: underline;
+  cursor: pointer;
 }
 .left {
   width: 45%;
@@ -56,6 +59,7 @@ body {
   padding-top: 40px;
   padding-right: 40px;
   float: right;
+  text-decoration: underline;
 }
 
 @media all and (max-width: 945px) {
@@ -118,6 +122,9 @@ ul li {
 #new_message {
   margin-left: 20%;
 }
+.random:hover {
+  cursor: pointer;
+}
 .footer {
   text-align: right;
 }
@@ -125,7 +132,7 @@ ul li {
   font-size: 150px;
   -webkit-opacity: 0.25;
   -moz-opacity: 0.25;
-  opacity: 0.02;
+  opacity: 0.04;
   -webkit-transition: all 5s ease;
   -moz-transition: all 5s ease;
   -ms-transition: all 5s ease;

@@ -69,7 +69,7 @@ function setupButton() {
         },
             function(isConfirm){  
               if (isConfirm) {    
-                swal("Sent!", "Your friend should get the message soon!", "success");
+                //swal("Sent!", "Your friend should get the message soon!", "success");
                 //debugger;
                 $('.new_message').submit();
 
@@ -78,6 +78,9 @@ function setupButton() {
               } 
             });
   });  
+  $('.dead').on('click', function(){
+    swal("Gone!", "This will delete the message and take you to one of my random stories")
+  })
 }
 
 
@@ -94,7 +97,7 @@ function pageTitle() {
 function randomPage() {
   $('.random').click(function(){
 
-  var access_tokens = ['a769699ea127a2dfec22bb55c7f45c17', '5adbc1322aa9386aed632b7e1ec4b8f0', '21f8d975ad83baced44c9c9b1b59823a']
+  var access_tokens = ['a769699ea127a2dfec22bb55c7f45c17', 'abc3456d4a2c828e684c9af844745631', '21f8d975ad83baced44c9c9b1b59823a','1be205fbd6e496dd452652ac8767182e']
 
   var random_access_token = Math.floor(Math.random()*access_tokens.length);
 
