@@ -1,12 +1,28 @@
+<div class='random'>Another!</div>
 <% @messages.each do |m| %>
-  <h3><%= m.title  %></h3>
-  <p><%= m.body.html_safe  %></p>
 
+  <div class="title">
+    <h3><%= m.title  %></h3>
 
-  <span data-openedby='finished'>
-    <ul>
-      <li><%= link_to "Reply!", new_message_path(:receiver_email => m.sender_email, :from => m.to, :to => m.from, :sender_email => m.receiver_email),'data-no-turbolink' => true  %></li>
-      <li><%= link_to "I'm done", message_path(m.id), method: :delete %></li>
-    </ul>
-</span>
+  </div>
+
+    
+
+  <div class="body">
+    <p>to <%= m.to  %></p>
+    <br>
+    <p><%= m.body.html_safe  %></p>
+    <span data-openedby='finished'>
+      <div class="left">
+        <ul>
+          <li><%= link_to "Reply!", new_message_path(:receiver_email => m.sender_email, :from => m.to, :to => m.from, :sender_email => m.receiver_email),'data-no-turbolink' => true  %></li>
+          <li><%= link_to "I'm done", message_path(m.id), method: :delete %></li>
+        </ul>
+      </div>
+      <div class="footer">
+        from <%=m.from  %>
+      </div>
+    </span>
+  </div>
+  
 <% end %>

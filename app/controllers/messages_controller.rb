@@ -32,7 +32,7 @@ class MessagesController < ApplicationController
     @message = Message.find params[:id]
     @message.destroy!
     flash[:alert] = "Message is gone forever!"
-    redirect_to messages_path
+    redirect_to message_path(RandomPath.new.path)
   end
 
 
