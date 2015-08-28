@@ -8,9 +8,7 @@ RSpec.describe HomeController, type: :controller do
                             from: 'Sender',
                             sender_email: 'test_email_1@gmail.com',
                             receiver_email: 'test_email_2@gmail.com',
-                            access_token: 'Random'
-                            )}
+                            access_token: 'Random')}
     
   
-
 end
