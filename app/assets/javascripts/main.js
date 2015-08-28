@@ -86,7 +86,7 @@ function pageTitle() {
 function randomPage() {
   $('.random').click(function(){
 
-  var access_tokens = ['0b39d9016fcfe339597e207384e5e198', '60292e69ad738801f0ba553f27f39177', 'aa69af9d43dd491bc4982855663ca4f1','1be205fbd6e496dd452652ac8767182e']
+  var access_tokens = ['0b39d9016fcfe339597e207384e5e198', '60292e69ad738801f0ba553f27f39177', 'aa69af9d43dd491bc4982855663ca4f1']
 
   var random_access_token = Math.floor(Math.random()*access_tokens.length);
 
