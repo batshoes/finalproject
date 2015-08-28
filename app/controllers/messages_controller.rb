@@ -40,7 +40,7 @@ private
 
 
   def message_params
-    params.require(:message).permit(:to, :from, :title, :body, :sender_email, :receiver_email, :access_token)
+    params.require(:message).permit(:to, :from, :title, :body, :sender_email, :receiver_email, :access  _token)
   end
 
 end

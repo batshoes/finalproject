@@ -86,7 +86,7 @@ function setupButton() {
 
 function pageTitle() {
 
-  var pagetitles = ["James Middlemiss", "Hey Guys!", "It's Snapchat, for writers", "Invisible Ink"]
+  var pagetitles = ["James Middlemiss", "Hey Guys!", "It's for writers", "Invisible Ink"]
   
   var pickpagetitle = Math.floor(Math.random()*pagetitles.length);
   
@@ -105,4 +105,8 @@ function randomPage() {
 
   });
 }
+
+function randomizer() {
+  $('.randomizer').on
+} 
 
