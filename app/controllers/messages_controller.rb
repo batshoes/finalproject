@@ -18,11 +18,10 @@ class MessagesController < ApplicationController
       if @message.valid?
         body = Condenser.new.contract(@message.body)
         @message.body = body
-        @message.sender_email = "middlemissj.usa@gmail.com"
         @message.save
+        MailSender.new.mail(@message)
         redirect_to messages_path
         flash[:notice] = "Success"
-        MailSender.new.mail(@message)
       else
         flash[:notice] = "You wrong"
       end
