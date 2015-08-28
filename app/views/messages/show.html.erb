@@ -16,7 +16,7 @@
       <div class="left">
         <ul>
           <li><%= link_to "Reply!", new_message_path(:receiver_email => m.sender_email, :from => m.to, :to => m.from, :sender_email => m.receiver_email),'data-no-turbolink' => true  %></li>
-          <li class='dead'>I'm Done</li>
+          <li><%= link_to "I'm Done", message_path(m.id), 'data-no-turbolink' => true, method: :delete %></li>
         </ul>
       </div>
       <div class="footer">

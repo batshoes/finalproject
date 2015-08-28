@@ -13,7 +13,7 @@ class MailSender
 
     
     @confirmation = "<p>Hi!, #{@name} You've gotten a message in Invisible Ink from #{@your_name}.</p>"
-    @confirmation = "#{@confirmation}" + "Click here! http://localhost:3000/messages/#{@access_token}"
+    @confirmation = "#{@confirmation}" + "Click here! https://nameless-refuge-2654.herokuapp.com/messages/#{@access_token}"
     
     mandrill = Mandrill::API.new ENV['MANDRILL_APIKEY']
      message = {to: [{"type"  =>"to",
