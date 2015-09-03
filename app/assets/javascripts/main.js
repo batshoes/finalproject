@@ -97,16 +97,14 @@ function pageTitle() {
 function randomPage() {
   $('.random').click(function(){
 
-  var access_tokens = ['a769699ea127a2dfec22bb55c7f45c17', 'abc3456d4a2c828e684c9af844745631', '21f8d975ad83baced44c9c9b1b59823a','1be205fbd6e496dd452652ac8767182e']
+  // var access_tokens = ['a769699ea127a2dfec22bb55c7f45c17', 'abc3456d4a2c828e684c9af844745631', '21f8d975ad83baced44c9c9b1b59823a','1be205fbd6e496dd452652ac8767182e']
 
-  var random_access_token = Math.floor(Math.random()*access_tokens.length);
+  // var random_access_token = Math.floor(Math.random()*access_tokens.length);
 
-  location.assign("http://localhost:3000/messages/"+ access_tokens[random_access_token]);
+  location.assign("http://localhost:3000/messages");
 
   });
 }
 
-function randomizer() {
-  $('.randomizer').on
-} 
+
 

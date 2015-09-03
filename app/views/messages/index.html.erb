@@ -1,10 +1,29 @@
-<div class='random'>Another!</div>
 
-<% @message do |m|  %>
 
-  <h3><%= m.title  %></h3>
-  <p><%= m.body.html_safe %></p>
+
+<% @message.each do |m| %>
+
+  <div class="title">
+    <h3><%= m.title  %></h3>
+  </div>
+
+  <div class="body">
+    <p>to <%= m.to  %></p>
+    <br>
+    <p><%= m.body.html_safe  %></p>
+    <span data-openedby='finished'>
+      <div class='left'>
+        <ul>
+          <li><%= link_to "I want to try!", new_message_path, 'data-no-turbolink' => true  %></li>
+          <li><div class='random'>Another!</div></li>
+        </ul>
+        
+        
+      </div>
+      <div class="footer">
+        from <%= m.from  %>
+      </div>
+    </span>
+  </div>
   
-
 <% end %>
-
