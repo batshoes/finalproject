@@ -2,7 +2,7 @@
 class MessagesController < ApplicationController
 
   def index
-    @messages = Message.all
+    @message = Message.where access_token: RandomPath.new.path
   end
 
   def show
@@ -40,7 +40,7 @@ private
 
 
   def message_params
-    params.require(:message).permit(:to, :from, :title, :body, :sender_email, :receiver_email, :access  _token)
+    params.require(:message).permit(:to, :from, :title, :body, :sender_email, :receiver_email, :access_token)
   end
 
 end

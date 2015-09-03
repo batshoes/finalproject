@@ -1,11 +1,10 @@
-<% @messages.each do |m|  %>
+<div class='random'>Another!</div>
+
+<% @message do |m|  %>
 
   <h3><%= m.title  %></h3>
-  <% unless m.body == nil %>
-    <p><%= m.body.html_safe %></p>
-  <% end %>
-    <p> <%= m.access_token  %></p>
+  <p><%= m.body.html_safe %></p>
+  
 
 <% end %>
 
-<div class='randomizer'></div>
